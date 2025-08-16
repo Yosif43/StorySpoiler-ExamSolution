@@ -98,8 +98,8 @@ namespace StorySpoiler
 
             Assert.That(response.StatusCode, Is.EqualTo(HttpStatusCode.OK));
 
-            var foods = JsonSerializer.Deserialize<List<object>>(response.Content);
-            Assert.That(foods, Is.Not.Null);
+            var json = JsonSerializer.Deserialize<List<object>>(response.Content);
+            Assert.That(json, Is.Not.Null);
         }
 
         [Test, Order(4)]
